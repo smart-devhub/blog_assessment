@@ -1,15 +1,18 @@
 import React from "react";
+// @import dependencies
 import { AppBar, Toolbar, Typography, Avatar, Box } from "@mui/material";
+import Link from "next/link";
 
 export default function Header({ name }: { name: string }) {
   const getInitials = (name: string) => {
-    return name.charAt(0).toUpperCase();
+    return name?.charAt(0)?.toUpperCase();
   };
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#1976d2" }}>
       <Toolbar>
         {/* Left side of the header */}
+
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           My App
         </Typography>

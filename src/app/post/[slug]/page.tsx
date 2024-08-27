@@ -51,7 +51,7 @@ export default async function DetailPage({
             {post?.title}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {post?.description}
+            {post?.description || ""}
           </Typography>
         </CardContent>
       </Card>
@@ -70,27 +70,28 @@ export default async function DetailPage({
             Comments
           </Typography>
           <List sx={{ padding: 0 }}>
-            {postComments?.map((comment: any, index: number) => (
-              <React.Fragment key={comment.id}>
-                <ListItem alignItems="flex-start" sx={{ padding: "16px 0" }}>
-                  <ListItemText
-                    primary={
-                      <Typography variant="body1" fontWeight="medium">
-                        {comment?.name}
-                      </Typography>
-                    }
-                    secondary={
-                      <Typography variant="body2" color="text.secondary">
-                        {comment?.body}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                {index < postComments?.length - 1 && (
-                  <Divider variant="middle" component="li" sx={{ my: 1 }} />
-                )}
-              </React.Fragment>
-            ))}
+            {postComments &&
+              postComments?.map((comment: any, index: number) => (
+                <React.Fragment key={comment.id}>
+                  <ListItem alignItems="flex-start" sx={{ padding: "16px 0" }}>
+                    <ListItemText
+                      primary={
+                        <Typography variant="body1" fontWeight="medium">
+                          {comment?.name || ""}
+                        </Typography>
+                      }
+                      secondary={
+                        <Typography variant="body2" color="text.secondary">
+                          {comment?.body || ""}
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                  {index < postComments?.length - 1 && (
+                    <Divider variant="middle" component="li" sx={{ my: 1 }} />
+                  )}
+                </React.Fragment>
+              ))}
           </List>
         </CardContent>
       </Card>

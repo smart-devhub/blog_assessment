@@ -1,5 +1,4 @@
 import React from "react";
-// @import dependencies
 import {
   Card,
   CardContent,
@@ -9,7 +8,15 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 
-export default function DataCard({ data }: any) {
+interface DataCardProps {
+  data: {
+    id: any;
+    title: string;
+    body: string;
+  };
+}
+
+export default function DataCard({ data }: DataCardProps) {
   return (
     <Grid item xs={12} sm={12} md={4} lg={3} xl={3} key={data.id}>
       <Link href={`/post/${data.id}`} passHref>
