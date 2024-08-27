@@ -1,4 +1,4 @@
-# Sample Next.js Application
+# Sample Blog Application
 
 ## Overview
 
@@ -24,12 +24,19 @@ Make sure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/smart-devhub/blog_assessment.git
 
    cd your-repo
    ```
 
 2. **Install Dependencies "**
+
+```bash
    npm install or yarn
+```
+
 3. **Run APP**
-   npm run dev or yarn dev
+
+```bash
+ npm run dev or yarn dev
+```
